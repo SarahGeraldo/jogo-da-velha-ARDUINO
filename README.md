@@ -1,7 +1,7 @@
 # jogo-da-velha-ARDUINO
 
 Autor: Sarah Nicole
-Data: 29-04-2022
+Data: 29-04-2024
 
 # Introdução:
 Caros colaboradores, o jogo apresentado é o jogo da velha, um jogo muito conhecido por não ser tão criterioso nos materiais de uso e por qualquer um poder jogá-lo. Trouxemos este jogo para as plataformas digitais usando o programa Flowgorithm. Seu intuíto é divertir e entreter os jogadores.
