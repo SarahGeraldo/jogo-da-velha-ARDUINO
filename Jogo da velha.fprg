@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="I1HM"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-04-18 02:47:18 "/>
+        <attribute name="created" value="STFITTtFQ0U0MzZTRU5BSVhYOzIwMjQtMDQtMTg7IjEwOjAyOjUzICI7MjM2NA=="/>
+        <attribute name="edited" value="STFITTtFQ0U0MzZTRU5BSVhYOzIwMjQtMDQtMTg7IjAyOjQ3OjE4ICI7MjsyNDg0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="criar tabuleiro e jogadores, zerar as vari&#225;veis&#13;&#10;&#13;&#10;0 = posi&#231;&#227;o vazia&#13;&#10;1 = jogada na posi&#231;&#227;o do player 1&#13;&#10;2 = jogada na posi&#231;&#227;o do player 2"/>
+            <declare name="tabuleiro" type="Integer" array="True" size="9"/>
+            <comment text="limpar o tabuleiro"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="8" direction="inc" step="1">
+                <assign variable="i" expression="0"/>
+            </for>
+            <declare name="player1" type="String" array="False" size=""/>
+            <assign variable="player1" expression="&quot;player 1&quot;"/>
+            <declare name="player2" type="String" array="False" size=""/>
+            <assign variable="player2" expression="&quot;player 2&quot;"/>
+            <declare name="player3" type="String" array="False" size=""/>
+            <assign variable="player3" expression="&quot;player 3&quot;"/>
+            <declare name="jogada" type="String" array="False" size=""/>
+            <declare name="HaVencedor" type="Boolean" array="False" size=""/>
+            <assign variable="HaVencedor" expression="false"/>
+            <comment text="in&#237;ciar o jogo, definir quem joga primeiro"/>
+            <comment text="registrar a jogada do primeiro jogador"/>
+            <assign variable="jogada" expression="&quot;&quot;"/>
+            <comment text="verificar o tabuleiro, se houver ganhador ou empate, finalizar o jogo"/>
+            <comment text="converter a jogada texto em dois inteiros, linha e coluna"/>
+            <comment text="se n&#227;o houver ganhador ou empate, registrar a jogada do segundo jogador"/>
+            <comment text="verificar se a posi&#231;&#227;o de jogada &#233; v&#225;lida"/>
+            <output expression="&quot;Digite a posi&#231;&#227;o da sua pe&#231;a player 1&quot;" newline="True"/>
+            <input variable="jogada"/>
+            <comment text="verificar se a posi&#231;&#227;o de jogada &#233; v&#225;lida"/>
+            <if expression="tabuleiro[linha][coluna]==0">
+                <then>
+                    <assign variable="tabuleiro[linha][coluna]" expression="1"/>
+                </then>
+                <else>
+                    <output expression="&quot;Sua jogada &#233; inv&#225;lida! Por favor, insira uma posi&#231;&#227;o v&#225;lida para sua pe&#231;a.&quot;" newline="True"/>
+                </else>
+            </if>
+            <comment text="verificar o tabuleiro, se houver ganhador ou empate, finalizar o jogo"/>
+            <comment text="verificar a jogada vencedora nas linhas"/>
+            <if expression="(tabuleiro[0][0] == 2 &amp;&amp; tabuleiro[0][1] == 2 &amp;&amp; tabuleiro[0][2] == 2) || &#13;&#10;(tabuleiro[1][0] == 2 &amp;&amp; tabuleiro[1][1] == 2 &amp;&amp; tabuleiro[1][2] == 2) || &#13;&#10;(tabuleiro[2][0] == 2 &amp;&amp; tabuleiro[2][1] == 2 &amp;&amp; tabuleiro[2][2] == 2)">
+                <then>
+                    <assign variable="HaVencedor" expression="true"/>
+                </then>
+                <else>
+                    <comment text="verificar a jogada vencedora nas colunas"/>
+                    <if expression="(tabuleiro[0][0] == 2 &amp;&amp; tabuleiro[1][0] == 2 &amp;&amp; tabuleiro[2][0] == 2) || &#13;&#10;(tabuleiro[0][1] == 2 &amp;&amp; tabuleiro[1][1] == 2 &amp;&amp; tabuleiro[2][1] == 2)|| &#13;&#10;(tabuleiro[0][2] == 2 &amp;&amp; tabuleiro[1][2] == 2 &amp;&amp; tabuleiro[2][2] == 2)">
+                        <then>
+                            <assign variable="HaVencedor" expression="true"/>
+                        </then>
+                        <else>
+                            <comment text="verificar a jogada vencedora nas di&#225;gonais"/>
+                            <if expression="(tabuleiro[0][0] == 2 &amp;&amp; tabuleiro[1][1] == 2 &amp;&amp; tabuleiro[2][2] == 2) || &#13;&#10;(tabuleiro[2][0] == 2 &amp;&amp; tabuleiro[1][1] == 2 &amp;&amp; tabuleiro[0][2] == 2)">
+                                <then>
+                                    <assign variable="HaVencedor" expression="true"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <comment text="converter a jogada texto em dois inteiros, linha e coluna"/>
+            <assign variable="jogada" expression="&quot;&quot;"/>
+            <output expression="&quot;Digite a posi&#231;&#227;o da sua pe&#231;a player 2&quot;" newline="True"/>
+            <input variable="jogada"/>
+            <assign variable="jogada" expression="&quot;&quot;"/>
+            <output expression="&quot;Digite a posi&#231;&#227;o da sua pe&#231;a player 3&quot;" newline="True"/>
+            <input variable="jogada"/>
+        </body>
+    </function>
+</flowgorithm>
