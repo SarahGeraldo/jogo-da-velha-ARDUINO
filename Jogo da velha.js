@@ -34,25 +34,25 @@
     // anotar e registrar a jogada do primeiro jogador
     velha = 1;
     do {
-        window.alert(tabuleiro[0].ToString() + tabuleiro[1] + tabuleiro[2]);
-        window.alert(tabuleiro[3].ToString() + tabuleiro[4] + tabuleiro[5]);
-        window.alert(tabuleiro[6].ToString() + tabuleiro[7] + tabuleiro[8]);
+       console.log(tabuleiro[0].ToString() + tabuleiro[1] + tabuleiro[2]);
+       console.log(tabuleiro[3].ToString() + tabuleiro[4] + tabuleiro[5]);
+       console.log(tabuleiro[6].ToString() + tabuleiro[7] + tabuleiro[8]);
         jogada = "";
-        window.alert("Digite a posição da sua peça,Jogadordavez");
+       console.log("Digite a posição da sua peça,Jogadordavez");
         jogada = window.prompt('Enter a value for jogada');
 
         // converter a jogada texto em dois inteiros linha e coluna
         // simula a função Serial.parseint()do Arduino
         linha = parseInt(jogada.charAt(0));
         coluna = parseInt(jogada.charAt(2));
-        window.alert("linha: " + linha + "; Coluna: " + coluna);
+       console.log("linha: " + linha + "; Coluna: " + coluna);
 
         // verificar se a posição "rodada" é valida
         // converter a jogada texto em dois inteiros linha e coluna
         if (tabuleiro[3 * linha + coluna] == 0) {
             tabuleiro[3 * linha + coluna] = jogadordavez;
         } else {
-            window.alert("posição ocupada,jogar novamente");
+           console.log("posição ocupada,jogar novamente");
 
             // informar ao jogador1 que a posição está preenchidaé invalida e ele precisa informar um posição valida
         }
@@ -84,11 +84,11 @@
         velha = velha + 1;
     } while (!haVencedor && velha <= 9);
     if (haVencedor) {
-        window.alert("PARABENS PELA VITORIA JOGADOR" + jogadordavez);
+       console.log("PARABENS PELA VITORIA JOGADOR" + jogadordavez);
     } else {
-        window.alert("DEU VELHa");
+       console.log("DEU VELHa");
     }
-    window.alert("parabens você ganhou!");
+   console.log("parabens você ganhou!");
 
     // verificar o tabuleiro, se houve ganhador ou empate, finalizar jogo.
 }
@@ -106,7 +106,7 @@ function validaPosicao(entrada) {
     var entradaValida;
 
     entradaValida = false;
-    window.alert(entrada.length());
+   console.log(entrada.length());
     if (entrada.length() == 3) {
         if (entrada.charAt(0) == "0" || entrada.charAt(0) == "1" || entrada.charAt(0) == "2") {
             if (entrada.charAt(2) == "0" || entrada.charAt(2) == "1" || entrada.charAt(2) == "2") {
