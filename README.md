@@ -12,5 +12,16 @@ Pontos fortes:
 - Rápido acesso;
 - Disponível para todos (classificação livre);
 
-# Necessidades:
-- O algoritimo
+# Restrições:
+- O jogador deve fazer apenas uma jogada por vez alternado com o adversário;
+- Deve- se ter uma boa conexão com a internet;
+
+# Limitações:
+- Os jogadores devem ter pleno conhecimento das regras do jogo;
+- Os jogadores não podem jogar na mesma casa duas vezes.
+
+# Escopo:
+O jagador 1 começa a rodada colocando sua peça em uma casa do tabuleiro. O jogador 2 é o próximo e repete o processo. Ao final das rodadas, com os espaços das casas todos ocupados, vence o jogador que completar uma linha, coluna ou diagonal com as suas peças.
+
+# Expectativa de design e estilo:
+O tabuleiro deve ter um painel quadriculado de 3x3.
